@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="images/share.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="css/kantor.css" rel="stylesheet">
+    <script defer src="js/kantor.js"></script>
+    <title>Currency Converter</title>
+</head>
+
+<body class="body">
+    <header class="header">Kalkulator walut</header>
+    <form class="form js-form">
+        <fieldset class="form__fieldset">
+            <legend class="form__legend">Kalkulator walut</legend>
+            <p class="form__line">
+                <label>
+                    <span class="form__labelText">Kwota*</span>
+                    <input type="number" min="1" step="any" placeholder="Wpisz kwotę" required class="js-amount form__field">
+                </label>
+            </p>
+            <p class="form__line">
+                <label>
+                    <span class="form__labelText">Przewalutowanie z</span>
+                    <select class="form__field js-inputCurrency">
+                        <option value="PLN">PLN - polski złoty</option>
+                        <option value="GBP">GBP - brytyjski funt szterling</option>
+                        <option value="USD">USD - dolar amerykański</option>
+                        <option value="CZK">CZK - korona czeska</option>
+                        <option value="EUR">EUR - euro</option>
+                    </select>
+                </label>
+            </p>
+            <p class="form__line">
+                <label>
+                    <span class="form__labelText">Przewalutowanie na</span>
+                    <select class="form__field js-outputCurrency">
+                        <option value="PLN">PLN - polski złoty</option>
+                        <option value="GBP">GBP - brytyjski funt szterling</option>
+                        <option value="USD">USD - dolar amerykański</option>
+                        <option value="CZK">CZK - korona czeska</option>
+                        <option value="EUR">EUR - euro</option>
+                    </select>
+                </label>
+            </p>
+            <button class="form__button">Przewalutuj</button>
+            <span class="form__labelText form__resault">
+                <p class="convertedAmount">
+                    Przewalutowana kwota<strong class="js-result resault__value"></strong>
+                </p>
+            </span>
+        </fieldset>
+    </form>
+    <p class="header header--second">Pola wymagane do wypełnienia oznaczone są *</p>
+    <div class="averageExchangeRates">
+        <div class="averageExchangeRates--margin">
+            <p class="averageExchangeRates__item">
+                Uśrednione kursy wymiany z dnia 09.09.2022 13:00
+            </p>
+            <p class="averageExchangeRates__item">
+                1,00 EUR = 4,71790 PLN
+            </p>
+            <p class="averageExchangeRates__item">
+                1,00 GBP = 5,43913 PLN
+            </p>
+            <p class="averageExchangeRates__item">
+                1,00 USD = 4,68485 PLN
+            </p>
+            <p class="averageExchangeRates__item">
+                1,00 CZK = 0,19224 PLN
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

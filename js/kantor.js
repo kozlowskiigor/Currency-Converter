@@ -4,9 +4,9 @@ const inputCurrencyElement = document.querySelector(".js-inputCurrency");
 const outputCurrencyElement = document.querySelector(".js-outputCurrency");
 const resultElement = document.querySelector(".js-result");
 
-const plnToGbp = 0.18476;
-const plnToUsd = 0.21453;
-const plnToCzk = 5.21495;
+const plnToGbp = 0.18385;
+const plnToUsd = 0.21345;
+const plnToCzk = 5.20183;
 const plnToEur = 0.21195;
 const usdToEur = 0.99190;
 const usdToCzk = 24.33380;

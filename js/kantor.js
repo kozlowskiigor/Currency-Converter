@@ -7,7 +7,7 @@ const resultElement = document.querySelector(".js-result");
 const plnToGbp = 0.18476;
 const plnToUsd = 0.21453;
 const plnToCzk = 5.21495;
-const plnToEur = 0.21257;
+const plnToEur = 0.21195;
 const usdToEur = 0.99190;
 const usdToCzk = 24.33380;
 const usdToGbp = 0.86147;
@@ -15,7 +15,7 @@ const gbpToEur = 1.15214;
 const gbpToCzk = 28.26830;
 const czkToEur = 0.04076;
 
-formElement.addEventListener("submit", (event) => {
+const calculating = (event) => {
     event.preventDefault();
 
     const inputCurrency = inputCurrencyElement.value;
@@ -60,4 +60,6 @@ formElement.addEventListener("submit", (event) => {
             break;
     }
     resultElement.innerText = `${result.toFixed(2)} ${outputCurrency}`;
-});
+};
+
+formElement.addEventListener("submit", calculating)

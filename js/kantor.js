@@ -16,7 +16,7 @@
     const gbpToCzk = 28.26830;
     const czkToEur = 0.04076;
 
-    const calculating = (event) => {
+    const onFormSubmit = (event) => {
         event.preventDefault();
 
         const inputCurrency = inputCurrencyElement.value;
@@ -62,5 +62,5 @@
         };
         resultElement.innerText = `${result.toFixed(2)} ${outputCurrency}`;
     };
-    formElement.addEventListener("submit", calculating)
+    formElement.addEventListener("submit", onFormSubmit)
 };

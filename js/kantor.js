@@ -59,9 +59,8 @@
                 else if (outputCurrency === "PLN") result = (amount / plnToEur);
                 else if (outputCurrency === "USD") result = (amount / usdToEur);
                 break;
-        }
+        };
         resultElement.innerText = `${result.toFixed(2)} ${outputCurrency}`;
     };
-
     formElement.addEventListener("submit", calculating)
 };

@@ -1,0 +1,17 @@
+.averageExchangeRates {
+  background: hsla(0, 0%, 90%, 0.925);
+  max-width: 600px;
+  color: hsla(0, 0%, 0%, 0.850);
+  padding: 1px;
+  margin: 10px auto;
+  border: 3px ridge;
+  border-radius: 5px;
+}
+
+.averageExchangeRates--InsideMargin {
+  margin: 0 15px;
+}
+
+.averageExchangeRates__item {
+  margin: 10px 0;
+}

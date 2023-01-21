@@ -5,34 +5,41 @@
   const outputCurrencyElement = document.querySelector(".js-outputCurrency");
   const resultElement = document.querySelector(".js-result");
 
-  // const pln = {
-  //   short: "PLN",
-  //   value: "1",
-  //   name: "Polski złoty",
-  // };
+  const pln = {
+    short: "PLN",
+    value: "1",
+    name: "Polski złoty",
+  };
 
-  // const gbp = {
-  //   short: "GBP",
-  //   value: "5,43913",
-  //   name: "Polski złoty",
-  // };
+  const gbp = {
+    short: "GBP",
+    value: "5,43913",
+    name: "Polski złoty",
+  };
 
-  // const usd = {
-  //   short: "USD",
-  //   value: "4,68485",
-  //   name: "Dolar amerykański",
-  // };
+  const usd = {
+    short: "USD",
+    value: "4,68485",
+    name: "Dolar amerykański",
+  };
 
-  // const czk = {
-  //   short: "CZK",
-  //   value: "0,19224",
-  //   name: "Korona czeska",
-  // };
+  const czk = {
+    short: "CZK",
+    value: "0,19224",
+    name: "Korona czeska",
+  };
+
+  const eur = {
+    short: "EUR",
+    value: "4,71790",
+    name: "Euro",
+  };
 
   const plnToGbp = 0.18385;
   const plnToUsd = 0.21345;
   const plnToCzk = 5.20183;
   const plnToEur = 0.21195;
+
   // const usdToEur = 0.99190;
   // const usdToCzk = 24.33380;
   // const usdToGbp = 0.86147;
@@ -42,40 +49,50 @@
 
   const calculateResult = (inputCurrency, outputCurrency, amount) => {
     switch (inputCurrency) {
-      case "PLN":
-        if (outputCurrency === "PLN") return amount * 1;
-        else if (outputCurrency === "EUR") return amount * plnToEur;
-        else if (outputCurrency === "CZK") return amount * plnToCzk;
-        else if (outputCurrency === "USD") return amount * plnToUsd;
-        else if (outputCurrency === "GBP") return amount * plnToGbp;
+      case pln.value:
+        switch (outputCurrency) {
+          case pln.value: return +amount;
+          case eur.value: return amount * plnToEur;
+          case czk.value: return amount * plnToCzk;
+          case usd.value: return amount * plnToUsd;
+          case gbp.value: return amount * plnToGbp;
+        }
         break;
-      case "USD":
-        if (outputCurrency === "USD") return amount * 1;
-        else if (outputCurrency === "PLN") return amount / plnToUsd;
-        else if (outputCurrency === "EUR") return amount * plnToEur / plnToUsd;
-        else if (outputCurrency === "CZK") return amount * plnToCzk / plnToUsd;
-        else if (outputCurrency === "GBP") return amount * plnToGbp / plnToUsd;
+      case usd.value:
+        switch (outputCurrency) {
+          case usd.value: return +amount;
+          case pln.value: return amount / plnToUsd;
+          case eur.value: return amount * plnToEur / plnToUsd;
+          case czk.value: return amount * plnToCzk / plnToUsd;
+          case gbp.value: return amount * plnToGbp / plnToUsd;
+        }
         break;
-      case "GBP":
-        if (outputCurrency === "GBP") return amount * 1;
-        else if (outputCurrency === "PLN") return amount / plnToGbp;
-        else if (outputCurrency === "EUR") return amount * plnToEur / plnToGbp;
-        else if (outputCurrency === "CZK") return amount * plnToCzk / plnToGbp;
-        else if (outputCurrency === "USD") return amount * plnToUsd / plnToGbp;
+      case gbp.value:
+        switch (outputCurrency) {
+          case gbp.value: return +amount;
+          case pln.value: return amount / plnToGbp;
+          case eur.value: return amount * plnToEur / plnToGbp;
+          case czk.value: return amount * plnToCzk / plnToGbp;
+          case usd.value: return amount * plnToUsd / plnToGbp;
+        }
         break;
-      case "CZK":
-        if (outputCurrency === "CZK") return amount * 1;
-        else if (outputCurrency === "PLN") return amount / plnToCzk;
-        else if (outputCurrency === "EUR") return amount * plnToEur / plnToCzk;
-        else if (outputCurrency === "GBP") return amount * plnToGbp / plnToCzk;
-        else if (outputCurrency === "USD") return amount * plnToUsd / plnToCzk;
+      case czk.value:
+        switch (outputCurrency) {
+          case czk.value: return +amount;
+          case pln.value: return amount / plnToCzk;
+          case eur.value: return amount * plnToEur / plnToCzk;
+          case gbp.value: return amount * plnToGbp / plnToCzk;
+          case usd.value: return amount * plnToUsd / plnToCzk;
+        }
         break;
-      case "EUR":
-        if (outputCurrency === "EUR") return amount * 1;
-        else if (outputCurrency === "PLN") return amount / plnToEur;
-        else if (outputCurrency === "CZK") return amount * plnToCzk / plnToEur;
-        else if (outputCurrency === "GBP") return amount * plnToGbp / plnToEur;
-        else if (outputCurrency === "USD") return amount * plnToEur / plnToEur;
+      case eur.value:
+        switch (outputCurrency) {
+          case eur.value: return +amount;
+          case pln.value: return amount / plnToEur;
+          case czk.value: return amount * plnToCzk / plnToEur;
+          case gbp.value: return amount * plnToGbp / plnToEur;
+          case usd.value: return amount * plnToEur / plnToEur;
+        }
         break;
     };
   };

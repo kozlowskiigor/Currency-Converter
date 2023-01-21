@@ -40,13 +40,6 @@
   const plnToCzk = 5.20183;
   const plnToEur = 0.21195;
 
-  // const usdToEur = 0.99190;
-  // const usdToCzk = 24.33380;
-  // const usdToGbp = 0.86147;
-  // const gbpToEur = 1.15214;
-  // const gbpToCzk = 28.26830;
-  // const czkToEur = 0.04076;
-
   const calculateResult = (inputCurrency, outputCurrency, amount) => {
     switch (inputCurrency) {
       case pln.value:

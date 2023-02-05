@@ -45,7 +45,7 @@ const calculateResult = (inputCurrency, outputCurrency, amount) => {
         case gbp.short: return amount / gbp.value;
       }
       break;
-      case gbp.short:
+    case gbp.short:
       switch (outputCurrency) {
         case gbp.short: return +amount;
         case pln.short: return amount * gbp.value;
